@@ -1,2 +1,16 @@
-import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';import useAuthStore from './store/authStore';import {useEffect} from 'react';import Layout from './components/Layout';import ProtectedRoute from './components/ProtectedRoute';import Login from './pages/Login';import Register from './pages/Register';import Dashboard from './pages/Dashboard';import Students from './pages/Students';import Classes from './pages/Classes';import Results from './pages/Results';import NotFound from './pages/NotFound';
-export default function App(){const init=useAuthStore(s=>s.init);useEffect(()=>{init()},[init]);return <BrowserRouter><Routes><Route path="/login" element={<Login/>}/><Route path="/register" element={<Register/>}/><Route element={<ProtectedRoute/>}><Route element={<Layout/>}><Route path="/dashboard" element={<Dashboard/>}/><Route path="/students" element={<Students/>}/><Route path="/classes" element={<Classes/>}/><Route path="/results" element={<Results/>}/></Route></Route><Route path="/" element={<Navigate to="/login" replace/>}/><Route path="*" element={<NotFound/>}/></Routes></BrowserRouter>}
+/*import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';import useAuthStore from './store/authStore';import {useEffect} from 'react';import Layout from './components/Layout';import ProtectedRoute from './components/ProtectedRoute';import Login from './pages/Login';import Register from './pages/Register';import Dashboard from './pages/Dashboard';import Students from './pages/Students';import Classes from './pages/Classes';import Results from './pages/Results';import NotFound from './pages/NotFound';
+export default function App(){const init=useAuthStore(s=>s.init);useEffect(()=>{init()},[init]);return <BrowserRouter><Routes><Route path="/login" element={<Login/>}/><Route path="/register" element={<Register/>}/><Route element={<ProtectedRoute/>}><Route element={<Layout/>}><Route path="/dashboard" element={<Dashboard/>}/><Route path="/students" element={<Students/>}/><Route path="/classes" element={<Classes/>}/><Route path="/results" element={<Results/>}/></Route></Route><Route path="/" element={<Navigate to="/login" replace/>}/><Route path="*" element={<NotFound/>}/></Routes></BrowserRouter>}*/
+
+export default function App() {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      display: 'grid',
+      placeItems: 'center',
+      fontFamily: 'Arial, sans-serif',
+      background: '#f5f7fb'
+    }}>
+      <h1>Student Manager is working!</h1>
+    </div>
+  );
+}>
