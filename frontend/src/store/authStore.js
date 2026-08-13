@@ -1,7 +1,16 @@
 import { create } from 'zustand';
 import { authAPI } from '../utils/api';
+const getStoredUser = () => {
+  try {
+    return JSON.parse(localStorage.getItem('user') || 'null');
+  } catch {
+    localStorage.removeItem('user');
+    return null;
+  }
+};
+
 const useAuthStore = create((set) => ({
-  user: JSON.parse(localStorage.getItem('user') || 'null'),
+  user: getStoredUser(),
   token: localStorage.getItem('token'), isLoading:false, error:null,
   init: async () => {
     const token=localStorage.getItem('token'); if(!token) return;
