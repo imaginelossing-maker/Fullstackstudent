@@ -1,0 +1,1 @@
+import jwt from 'jsonwebtoken';import dotenv from 'dotenv';dotenv.config();const secret=process.env.JWT_SECRET||'dev-secret-change-me';export const generateToken=p=>jwt.sign(p,secret,{expiresIn:'7d'});export const verifyToken=t=>{try{return jwt.verify(t,secret)}catch{return null}};

@@ -1,0 +1,1 @@
+import bcrypt from 'bcryptjs';export const validateEmail=e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);export const validatePassword=p=>typeof p==='string'&&p.length>=6;export const hashPassword=p=>bcrypt.hash(p,12);export const comparePassword=(p,h)=>bcrypt.compare(p,h);

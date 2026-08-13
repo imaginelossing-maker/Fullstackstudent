@@ -1,0 +1,1 @@
+import {Router} from 'express';import {getAllResults,createResult,updateResult,deleteResult} from '../controllers/resultController.js';import {authenticateToken} from '../middleware/auth.js';const r=Router();r.use(authenticateToken);r.get('/',getAllResults);r.post('/',createResult);r.put('/:id',updateResult);r.delete('/:id',deleteResult);export default r;

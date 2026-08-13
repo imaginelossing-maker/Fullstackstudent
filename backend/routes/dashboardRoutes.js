@@ -1,0 +1,1 @@
+import {Router} from 'express';import {getDashboardStats} from '../controllers/dashboardController.js';import {authenticateToken} from '../middleware/auth.js';const r=Router();r.get('/stats',authenticateToken,getDashboardStats);export default r;
